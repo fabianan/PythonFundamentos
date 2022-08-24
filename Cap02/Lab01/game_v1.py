@@ -4,16 +4,28 @@ from tkinter import *
 import random
 import time
 
+# Variáveis
+
 level = int(input("Qual nível você gostaria de jogar? 1/2/3/4/5 \n"))
 length = 500/level
 
+# Variável
 
 root = Tk()
-root.title("Ping Pong")
+
+# Funções/métodos da api
+
+root.title("Ping Pong da Fabiana")
 root.resizable(0,0)
 root.wm_attributes("-topmost", -1)
 
+# Variável
+
 canvas = Canvas(root, width=800, height=600, bd=0,highlightthickness=0)
+
+
+# Funções/métodos da api
+
 canvas.pack()
 
 root.update()
@@ -22,12 +34,20 @@ root.update()
 count = 0
 lost = False
 
+
+# Classe
+
 class Bola:
+
+    # construtor
+
     def __init__(self, canvas, Barra, color):
         self.canvas = canvas
         self.Barra = Barra
         self.id = canvas.create_oval(0, 0, 15, 15, fill=color)
         self.canvas.move(self.id, 245, 200)
+
+        # lista
 
         starts_x = [-3, -2, -1, 1, 2, 3]
         random.shuffle(starts_x)
@@ -40,6 +60,9 @@ class Bola:
 
 
     def draw(self):
+
+        # Tupla
+
         self.canvas.move(self.id, self.x, self.y)
 
         pos = self.canvas.coords(self.id)
@@ -129,11 +152,11 @@ def score():
     canvas.itemconfig(score_now, text="Pontos: " + str(count))
 
 def game_over():
-    canvas.itemconfig(game, text="Game over!")
+    canvas.itemconfig(game, text="FIM DO JOGO!")
 
 
-Barra = Barra(canvas, "orange")
-Bola = Bola(canvas, Barra, "purple")
+Barra = Barra(canvas, "blue")
+Bola = Bola(canvas, Barra, "red")
 
 
 score_now = canvas.create_text(430, 20, text="Pontos: " + str(count), fill = "green", font=("Arial", 16))

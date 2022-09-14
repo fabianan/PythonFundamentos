@@ -40,18 +40,25 @@ while opcao != 5:
     opcao = int(input("Digite sua opção (1/2/3/4/5): "))
 
     if (opcao == 5): break
-    
+
     num1 = int(input("Digite o primeiro número: "))
     num2 = int(input("Digite o segundo número: "))
 
     if opcao == 1: #adição
+        print("\n")
         print("Soma: %r + %r = " %(num1, num2), addNum(num1, num2))
+        print("\n")
     elif opcao == 2: #subtração
+        print("\n")
         print("Subtração: %r - %r =" %(num1, num2), difNum(num1, num2))
+        print("\n")
     elif opcao == 3: #multiplicação
-        print("Multiplicação: %r * %r =" %(num1, num2), multNum(num1, num2))
-    elif opcao == 4: #divisão
+        print("\n")
+        print("Multiplicação: %r * %r =" %(num1, num2), multNum(num1, num2))      
+        print("\n")
+    elif opcao == 4: #divisão        
+        print("\n")
         print("Divisão: %r / %r =" %(num1, num2), divNum(num1, num2))
-
+        print("\n")
 
 
